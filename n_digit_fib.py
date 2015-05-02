@@ -4,7 +4,7 @@ def n_digit_fib(n):
     """Input: A natural number n.
     Output: The first Fibonacci number with n digits."""
     f1 = 1
-    f2 = 1
+    f2 = 2
     fib = 0
     i = 3
     while fib < 10 ** (n - 1):
