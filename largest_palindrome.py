@@ -1,7 +1,5 @@
 import time
-
-def is_palindrome(s):
-    return s == s[::-1]
+from euler import is_palindrome
 
 def largest_palindromic_product(n=3):
     max_num = int(str(9) * n)

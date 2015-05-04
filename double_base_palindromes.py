@@ -14,9 +14,9 @@ def double_base_palindromes(n):
     # add 33 and 99, the only palindromic two-digit numbers
     # that are also palindromic in binary
     result = 157
-    for i in range(101, n):
+    for i in range(101, n, 2):
         # Only odd numbers are palindromic in binary
-        if i % 2 and is_palindrome(str(i)) and is_palindrome(binary_repr(i)):
+        if is_palindrome(str(i)) and is_palindrome(binary_repr(i)):
             result += i
     return result
 

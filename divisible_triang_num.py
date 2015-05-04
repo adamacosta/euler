@@ -1,19 +1,6 @@
-from math import sqrt, ceil, log
 import time
-
-def num_divisors(n):
-    """Input: an integer n.
-    Output: the number of divisors of n."""
-    # Every number is divisble by 1
-    result = 1
-    # Every number is divisble by itself
-    if n > 1:
-        result += 1
-    for i in range(2, ceil(sqrt(n))):
-        # Take advantage of symmetry of divisors
-        if n % i == 0:
-            result += 2
-    return result
+from math import ceil, log
+from euler import divisors
 
 def high_div_trian_num(num):
     """Input: an integer num.
@@ -22,9 +9,9 @@ def high_div_trian_num(num):
     n = ceil(num * log(num))
     while True:
         if n % 2:
-            n_div = num_divisors(n) * num_divisors((n + 1) // 2)
+            n_div = len(divisors(n)) * len(divisors((n + 1) // 2))
         else:
-            n_div = num_divisors(n // 2) * num_divisors(n + 1)
+            n_div = len(divisors(n // 2)) * len(divisors(n + 1))
         if n_div > 500:
             return n * (n + 1) // 2
         n += 1
