@@ -13,9 +13,16 @@ def most_common(nums):
        Output: The most common number."""
     return Counter(nums).most_common(1)[0][0]
 
-t0 = time.time()
-ans = most_common(count_triple_sums(pythagorean_triples()))
-t1 = time.time()
-elapsed = t1 - t0
+def main():
 
-print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+    n = 1000
+
+    t0 = time.time()
+    ans = most_common(count_triple_sums(pythagorean_triples(n)))
+    t1 = time.time()
+    elapsed = t1 - t0
+
+    print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+
+if __name__ == '__main__':
+    main()
