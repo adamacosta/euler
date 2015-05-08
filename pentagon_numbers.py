@@ -7,7 +7,6 @@ def pentagon():
                and D are all pentagon numbers."""
     p = pentagon_numbers(10000)
     ht = set(p)
-    result = []
     for j in range(len(p)):
         for k in range(j, len(p)):
             if p[k] - p[j] in ht and p[j] + p[k] in ht:

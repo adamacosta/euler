@@ -1,15 +1,15 @@
 import time
 from math import sqrt, ceil
-from euler import is_prime, sundaram
+from euler import is_prime, primes
 
 def max_prime_factor(n):
-    primes = sundaram(ceil(sqrt(n)))
-    for i in primes:
-        if n % i == 0:
-            if is_prime(n // i):
-                return n // i
+    ps = primes(ceil(sqrt(n)))
+    for p in ps:
+        if not n % p:
+            if is_prime(n // p):
+                return n // p
             else:
-                return max_prime_factor(n // i)
+                return max_prime_factor(n // p)
     return n
 
 def main():

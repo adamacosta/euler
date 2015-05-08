@@ -1,6 +1,6 @@
 import time
 import random
-from euler import sundaram, is_prime, all_primes
+from euler import primes, is_prime, all_primes
 
 def truncations(n):
     """Input: A natural number n.
@@ -16,16 +16,21 @@ def truncatable_primes():
     """Input: None.
     Output: The sum of all truncatable prime numbers."""
     result = []
-    primes = [i for i in sundaram(1000000) if i > 11]
-    for p in primes:
+    ps = [i for i in primes(1000000) if i > 11]
+    for p in ps:
         if all_primes(truncations(p)):
             result.append(p)
             if len(result) == 11:
                 return sum(result)
 
-t0 = time.time()
-ans = truncatable_primes()
-t1 = time.time()
-elapsed = t1 - t0
+def main():
 
-print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+    t0 = time.time()
+    ans = truncatable_primes()
+    t1 = time.time()
+    elapsed = t1 - t0
+
+    print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+
+if __name__ == '__main__':
+    main()

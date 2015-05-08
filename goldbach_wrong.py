@@ -1,16 +1,16 @@
 import time
-from euler import is_prime, sundaram
+from euler import is_prime, primes
 from math import sqrt
 
 def smallest_not_goldbach():
     """Input: None.
        Output: The smallest odd composite number that cannot be
                written as the sum of a prime and twice a square."""
-    primes = sundaram(10000)
+    ps = primes(10000)
     for c in range(35, 99999, 2):
         if is_prime(c):
             continue
-        for p in primes:
+        for p in ps:
             goldbach = False
             if p > c - 2:
                 break

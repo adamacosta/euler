@@ -1,11 +1,5 @@
 import time
-
-def gcd(n, m):
-    """Input: Two integers n and m.
-    Output: The greatest common divisor of n and m."""
-    if m == 0:
-        return n
-    return gcd(m, n % m)
+from euler import gcd
 
 def digit_cancelling_fractions():
     """Input: None.
@@ -38,9 +32,14 @@ def digit_cancelling_fractions():
                 denominator *= j
     return denominator // gcd(numerator, denominator)
 
-t0 = time.time()
-ans = digit_cancelling_fractions()
-t1 = time.time()
-elapsed = t1 - t0
+def main():
 
-print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+    t0 = time.time()
+    ans = digit_cancelling_fractions()
+    t1 = time.time()
+    elapsed = t1 - t0
+
+    print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+
+if __name__ == '__main__':
+    main()
