@@ -5,16 +5,21 @@ def digit_powers(n):
     Output: The sum of all numbers that can be written
     as the sum of nth powers of their digits."""
     result = 0
-    for i in range(2**n, n * 9**n):
-        if i == sum([int(j)**n for j in str(i)]):
+    for i in range(2 ** n, n * 9 ** n):
+        if i == sum([int(j) ** n for j in str(i)]):
             result += i
     return result
 
-n = 5
+def main():
 
-t0 = time.time()
-ans = digit_powers(n)
-t1 = time.time()
-elapsed = t1 - t0
+    n = 5
 
-print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+    t0 = time.time()
+    ans = digit_powers(n)
+    t1 = time.time()
+    elapsed = t1 - t0
+
+    print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+
+if __name__ == '__main__':
+    main()

@@ -1,5 +1,5 @@
 import time
-from euler import smallprimes as ps
+from euler_utils.primes import smallprimes as ps
 
 def consecutive_prime_sum():
     """Input: None.

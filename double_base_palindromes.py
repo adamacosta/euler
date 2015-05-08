@@ -1,10 +1,6 @@
 import time
 from numpy import binary_repr
-
-def is_palindrome(s):
-    """Input: A string s.
-    Output: Whether or not s is a palindrome."""
-    return s == s[::-1]
+from euler_utils.digits import is_palindrome
 
 def double_base_palindromes(n):
     """Input: A natural number n.
@@ -20,11 +16,16 @@ def double_base_palindromes(n):
             result += i
     return result
 
-n = 1000000
+def main():
 
-t0 = time.time()
-ans = double_base_palindromes(n)
-t1 = time.time()
-elapsed = t1 - t0
+    n = 1000000
 
-print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+    t0 = time.time()
+    ans = double_base_palindromes(n)
+    t1 = time.time()
+    elapsed = t1 - t0
+
+    print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+
+if __name__ == '__main__':
+    main()

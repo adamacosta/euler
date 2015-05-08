@@ -1,6 +1,6 @@
 import time
 from math import sqrt, ceil
-from euler import is_prime, primes
+from euler_utils.primes import is_prime, primes
 
 def max_prime_factor(n):
     ps = primes(ceil(sqrt(n)))

@@ -19,11 +19,16 @@ def find_paths(num):
     # between all nodes of length longest
     return (mat ** longest).getA()[0][dim - 1]
 
-num = 20
+def main():
 
-t0 = time.time()
-ans = find_paths(num)
-t1 = time.time()
-elapsed = t1 - t0
+    num = 20
 
-print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+    t0 = time.time()
+    ans = find_paths(num)
+    t1 = time.time()
+    elapsed = t1 - t0
+
+    print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+
+if __name__ == '__main__':
+    main()

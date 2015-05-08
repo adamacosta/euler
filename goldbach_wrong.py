@@ -1,5 +1,5 @@
 import time
-from euler import is_prime, primes
+from euler_utils.primes import is_prime, primes
 from math import sqrt
 
 def smallest_not_goldbach():

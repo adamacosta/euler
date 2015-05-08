@@ -1,11 +1,11 @@
 import time
-from euler import digit_sum
+from euler_utils.digits import digit_sum
 
 def max_digit_sum(a, b):
     """Input: Two natural numbers a and b.
        Output: The maximum digit sum of any number a ** b for
                a and b less than the inputs."""
-    return max([digit_sum(i**j) for i in range(1, a) for j in range(1, b)])
+    return max([digit_sum(i ** j) for i in range(1, a) for j in range(1, b)])
 
 def main():
 

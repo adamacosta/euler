@@ -1,5 +1,5 @@
 import time
-from euler import gcd
+from euler_utils.integer import gcd
 
 def digit_cancelling_fractions():
     """Input: None.

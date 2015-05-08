@@ -1,5 +1,5 @@
 import time
-from euler import is_palindrome
+from euler_utils.digits import is_palindrome
 
 def largest_palindromic_product(n=3):
     max_num = int(str(9) * n)
@@ -11,10 +11,14 @@ def largest_palindromic_product(n=3):
                 max_pal = i * j
     return max_pal
 
-t0 = time.time()
-answer = largest_palindromic_product()
-t1 = time.time()
-elapsed = t1 - t0
+def main():
 
-print(answer)
-print("Took " + str(elapsed) + " seconds")
+    t0 = time.time()
+    ans = largest_palindromic_product()
+    t1 = time.time()
+    elapsed = t1 - t0
+
+    print("Found " + str(ans) + " in " + str(elapsed) + " seconds")
+
+if __name__ == '__main__':
+    main()

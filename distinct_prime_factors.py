@@ -1,13 +1,13 @@
 import time
 from math import sqrt, ceil
-from euler import primes
+from euler_utils.primes import primes
 
 def consecutive_distinct_factors():
     """Input: None.
        Output: The first consecutive sequence of four integers
                that have four distinct factors."""
     nmax = 500000
-    start = 2**2 * 3**2 * 5**2 * 7**2
+    start = 2 ** 2 * 3 ** 2 * 5 ** 2 * 7 ** 2
     ps = primes(ceil(sqrt(nmax)))
     facts = [0 for i in range(nmax + 1)]
     for p in ps:

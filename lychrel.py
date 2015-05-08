@@ -1,5 +1,5 @@
 import time
-from euler import reverse, is_palindrome
+from euler_utils.digits import reverse, is_palindrome
 
 def lychrels(n):
     """Input: A natural number n.

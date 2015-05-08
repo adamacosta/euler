@@ -1,17 +1,15 @@
 import time
+from scipy.special import binom as C
 
-
-def poker_wins(hands):
-    """Input: A list of hands held by two players.
-       Output: The number of wins by each player."""
-    return hands[0]
+def combinatoric_selections():
+    """Input: None.
+       Output: The number of values of n for which nCr > 10**6."""
+    return len([C(n, r) for n in range(1, 101) for r in range(n) if C(n, r) > 10 ** 6])
 
 def main():
-
-    hands = open("poker.txt").read().splitlines()
     
     t0 = time.time()
-    ans = poker_wins(hands)
+    ans = combinatoric_selections()
     t1 = time.time()
     elapsed = t1 - t0
 

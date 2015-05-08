@@ -1,17 +1,5 @@
 import time
-
-def get_primes(n):
-    """Input: A natural number n > 100.
-    Output: All the primes p such that 100 < p < n."""
-    numbers = list(range(3, n + 1, 2))
-    half =  n // 2
-    initial = 4
-    for step in range(3, n + 1, 2):
-        for i in range(initial, half, step):
-            numbers[i - 1] = 0
-        initial += 2 * (step + 1)
-        if initial > half:
-            return [i for i in numbers if i > 100]
+from euler_utils.primes import primes
 
 def rotations(n):
     """Input: A natural number n.
@@ -35,7 +23,7 @@ def rotations(n):
 def circular_primes(n):
     """Input: A natural number n.
     Output: The number of circular primes less than n."""
-    pos = set(get_primes(n))
+    pos = set(primes(n))
     result = 13
     while len(pos) != 0:
         num = pos.pop()
@@ -45,11 +33,16 @@ def circular_primes(n):
             pos ^= new
     return result
 
-n = 1000000
+def main():
 
-t0 = time.time()
-ans = circular_primes(n)
-t1 = time.time()
-elapsed = t1 - t0
+    n = 1000000
 
-print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+    t0 = time.time()
+    ans = circular_primes(n)
+    t1 = time.time()
+    elapsed = t1 - t0
+
+    print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+
+if __name__ == '__main__':
+    main()

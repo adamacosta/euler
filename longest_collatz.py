@@ -21,11 +21,16 @@ def find_longest_collatz(n):
             max_start = i
     return max_start
 
-num = 1000000
+def main():
 
-t0 = time.time()
-ans = find_longest_collatz(num)
-t1 = time.time()
-elapsed = t1 - t0
+    num = 1000000
 
-print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+    t0 = time.time()
+    ans = find_longest_collatz(num)
+    t1 = time.time()
+    elapsed = t1 - t0
+
+    print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+
+if __name__ == '__main__':
+    main()

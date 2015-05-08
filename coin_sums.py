@@ -10,12 +10,17 @@ def coin_sums(coins, total):
             possibles[j] += possibles[j - coins[i]]
     return possibles.pop()
 
-coins = [1, 2, 5, 10, 20, 50, 100, 200]
-total = 200
+def main():
 
-t0 = time.time()
-ans = coin_sums(coins, total)
-t1 = time.time()
-elapsed = t1 - t0
+    coins = [1, 2, 5, 10, 20, 50, 100, 200]
+    total = 200
 
-print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+    t0 = time.time()
+    ans = coin_sums(coins, total)
+    t1 = time.time()
+    elapsed = t1 - t0
+
+    print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+
+if __name__ == '__main__':
+    main()

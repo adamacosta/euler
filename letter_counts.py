@@ -27,9 +27,14 @@ def letter_count():
     result += 9 * 99 * (len(hundred) + len("and"))
     return result
 
-t0 = time.time()
-ans = letter_count()
-t1 = time.time()
-elapsed = t1 - t0
+def main():
 
-print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+    t0 = time.time()
+    ans = letter_count()
+    t1 = time.time()
+    elapsed = t1 - t0
+
+    print("Found " + str(ans) + " in " + str(round(elapsed, 5)) + " seconds")
+
+if __name__ == '__main__':
+    main()

@@ -1,5 +1,4 @@
 import time
-import numpy as np
 from euler import is_prime, dig_rep, comb_btw, smallprimes as ps
 
 def prime_digit_replacement(n):

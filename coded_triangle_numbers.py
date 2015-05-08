@@ -1,12 +1,13 @@
 import time
-from euler import triangles, letter_vals
+from euler_utils.sequences import triangle_numbers
+from euler_utils.digits import letter_vals
 
 def coded_triangles(words):
     """Input: A list of words.
        Output: The number of words that are coded triangle numbers.
                That is, the sum of the numerical values of each letter
                as a position in the alphabet is a triangle number."""
-    t = set(triangles)
+    t = set(triangle_numbers(100))
     return sum([sum([letter_vals[c] for c in word]) in t for word in words])
 
 def main():
